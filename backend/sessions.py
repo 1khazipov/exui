@@ -95,7 +95,7 @@ def get_default_session_settings():
     return \
     {
         "prompt_format": "Chat-RP",
-        "roles": [ "User", "Assistant", "", "", "", "", "", "" ],
+        "roles": [ "Пользователь", "Ассистент", "", "", "", "", "", "" ],
         "system_prompt_default": True,
         "system_prompt": "This is a chat between a curious user and a helpful AI assistant.",
         "maxtokens": 1024,

@@ -168,9 +168,9 @@ class PromptFormat_phind_codellama(PromptFormat):
             text += "### System Prompt\n"
             text += system_prompt
             text += "\n\n"
-        text += "### User Message\n"
+        text += "### Пользователь\n"
         text += prompt
-        text += "\n\n### Assistant\n"
+        text += "\n\n### Ассистент\n"
         if response:
             text += response
             text += "\n\n"
@@ -197,9 +197,9 @@ class PromptFormat_deepseek_chat(PromptFormat):
         if system_prompt and system_prompt.strip() != "":
             text += system_prompt
             text += "\n\n"
-        text += "User: "
+        text += "Пользователь: "
         text += prompt
-        text += "\n\nAssistant:"
+        text += "\n\Ассистент:"
         if response:
             text += response
             text += "\n\n"

@@ -38,10 +38,10 @@ export class SessionSettings {
         // Roles
 
         this.sss_i_roles = [];
-        this.sss_i_roles[0] = new controls.LabelTextbox("sss-item-left", "User",   "sss-item-mid sss-item-textbox", "", this.settings.roles, 0, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null);
-        this.sss_i_roles[1] = new controls.LabelTextbox("sss-item-left", "Bot #1", "sss-item-mid sss-item-textbox", "", this.settings.roles, 1, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null);
+        this.sss_i_roles[0] = new controls.LabelTextbox("sss-item-left", "Пользователь",   "sss-item-mid sss-item-textbox", "", this.settings.roles, 0, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null);
+        this.sss_i_roles[1] = new controls.LabelTextbox("sss-item-left", "Бот #1", "sss-item-mid sss-item-textbox", "", this.settings.roles, 1, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null);
         for (let i = 2; i < 8; i++)
-            this.sss_i_roles[i] = new controls.LabelTextboxButton("sss-item-left", "Bot #" + i, "sss-item-mid sss-item-textbox", "", this.settings.roles, i, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null, "✕ Remove", () => { this.removeRole(i); });
+            this.sss_i_roles[i] = new controls.LabelTextboxButton("sss-item-left", "Бот #" + i, "sss-item-mid sss-item-textbox", "", this.settings.roles, i, (v) => { return v.trim() != ""; }, () => { this.updateView(true); }, null, "✕ Remove", () => { this.removeRole(i); });
 
         this.sss_i_addRole = new controls.LinkButton("+ Add...", null, () => { this.addRole(); }, "sss-item-link");
 
@@ -122,9 +122,9 @@ export class SessionSettings {
         let roles = [];
         let numroles = 1;
         for (let i = 0; i < 8; i++) roles.push(this.settings.roles[i].trim());
-        if (roles[0] == "") roles[0] = "User";
+        if (roles[0] == "") roles[0] = "Пользователь";
         for (let i = 1; i < 8; i++) if (roles[i] != "" && i + 1 > numroles) numroles = i + 1;
-        for (let i = 2; i < numroles; i++) if (roles[i] == "") roles[i] = "Assistant " + i;
+        for (let i = 2; i < numroles; i++) if (roles[i] == "") roles[i] = "Ассистент " + i;
         for (let i = 0; i < 8; i++) this.settings.roles[i] = roles[i];
 
         for (let i = 0; i < 8; i++) {

@@ -176,8 +176,8 @@ class SessionView {
         });
         div.addEventListener('input', () => { this.inputFieldAutogrow(); });
 
-        this.inputButton = new controls.Button("⏵ Chat", () => { this.submitInput() }, "session-input-button");
-        this.cancelButton = new controls.Button("⏹ Stop", () => { this.cancelGen() }, "session-input-button");
+        this.inputButton = new controls.Button("⏵ Отправить", () => { this.submitInput() }, "session-input-button");
+        this.cancelButton = new controls.Button("⏹ Стоп", () => { this.cancelGen() }, "session-input-button");
         this.inputButton.setHidden(false);
         this.cancelButton.setHidden(true);
         this.inputButton.refresh();
@@ -519,8 +519,8 @@ class ChatBlock {
                 text = text.slice(name.length + 1).trimStart();
             }
         } else {
-            if (this.block.author == "user") { col = roles.instructColors[0]; name = "User"; }
-            if (this.block.author == "assistant") { col = roles.instructColors[1]; name = "Assistant"; }
+            if (this.block.author == "user") { col = roles.instructColors[0]; name = "Пользователь"; }
+            if (this.block.author == "assistant") { col = roles.instructColors[1]; name = "Ассистент"; }
         }
 
         let html = "";
