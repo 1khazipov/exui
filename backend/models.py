@@ -92,7 +92,7 @@ def update_model(data):
         new_model = {}
         i = str(uuid.uuid4())
         new_model["model_uuid"] = i
-        new_model["name"] = data.get("name", "Unnamed model")
+        new_model["name"] = data.get("name", "Без названия")
         new_model["model_directory"] = data.get("model_directory", "")
         models[i] = new_model
         prepare_model(new_model)

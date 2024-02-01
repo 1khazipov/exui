@@ -22,7 +22,7 @@ export class Notepad {
         layout_l.appendChild(panel);
         layout.appendChild(this.notepadView);
 
-        this.removeButton = new controls.LinkButton("✖ Delete notepad", "✖ Confirm", () => { this.deleteNotepad(this.lastNotepadUUID); });
+        this.removeButton = new controls.LinkButton("✖ Удалить", "✖ Подтвердить", () => { this.deleteNotepad(this.lastNotepadUUID); });
         panel.appendChild(this.removeButton.element);
 
         this.lastNotepadUUID = null;
@@ -51,7 +51,7 @@ export class Notepad {
             if (response.notepads.hasOwnProperty(notepad_uuid))
                 this.addNotepad(response.notepads[notepad_uuid], notepad_uuid);
 
-        this.addNotepad("New notepad", "new");
+        this.addNotepad("Новая заметка", "new");
         let m = this.lastNotepadUUID ? this.lastNotepadUUID : "new";
         this.setNotepad(m, getResponse);
     }
@@ -196,8 +196,8 @@ class NotepadView {
             .then(response => {
                 globals.receiveGlobals(response);
                 this.notepadSettings = response.notepad_settings;
-                this.name = "New notepad";
-                this.setText("Once upon a time,");
+                this.name = "Новая заметка";
+                this.setText("Однажды,");
                 this.populate();
             });
         } else {

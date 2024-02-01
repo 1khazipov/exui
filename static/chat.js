@@ -23,7 +23,7 @@ export class Chat {
         layout_l.appendChild(panel);
         layout.appendChild(this.sessionView);
 
-        this.removeButton = new controls.LinkButton("✖ Delete session", "✖ Confirm", () => { this.deleteSession(this.lastSessionUUID); });
+        this.removeButton = new controls.LinkButton("✖ Удалить", "✖ Подтвердить", () => { this.deleteSession(this.lastSessionUUID); });
         panel.appendChild(this.removeButton.element);
 
         this.lastSessionUUID = null;
@@ -51,7 +51,7 @@ export class Chat {
             if (response.sessions.hasOwnProperty(session_uuid))
                 this.addSession(response.sessions[session_uuid], session_uuid);
 
-        this.addSession("New session", "new");
+        this.addSession("Новый чат", "new");
         let m = this.lastSessionUUID ? this.lastSessionUUID : "new";
         this.setSession(m, getResponse);
     }
@@ -205,7 +205,7 @@ class SessionView {
                 globals.receiveGlobals(response);
                 this.chatSettings = response.session_settings;
                 this.history = new Map();
-                this.name = "New session";
+                this.name = "Новая сессия";
                 this.populate();
             });
         } else {

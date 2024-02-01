@@ -73,7 +73,7 @@ def new_notepad():
     global current_notepad, notepad_list
     current_notepad = Notepad()
     current_notepad.init_new()
-    print(f"Created notepad {current_notepad.notepad_uuid}")
+    print(f"Создана заметка {current_notepad.notepad_uuid}")
     filename = current_notepad.save()
     notepad_list[current_notepad.notepad_uuid] = (current_notepad.name, filename)
     return current_notepad.to_json()
@@ -129,9 +129,9 @@ class Notepad:
 
 
     def init_new(self):
-        self.name = "Unnamed notepad"
+        self.name = "Без названия"
         self.notepad_uuid = str(uuid.uuid4())
-        self.text = "Once upon a time,"
+        self.text = "Однажды,"
         self.settings = get_default_notepad_settings()
 
 

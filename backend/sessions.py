@@ -134,7 +134,7 @@ class Session:
 
 
     def init_new(self):
-        self.name = "Unnamed session"
+        self.name = "Без названия"
         self.session_uuid = str(uuid.uuid4())
         self.history = []
         # self.mode = ""
